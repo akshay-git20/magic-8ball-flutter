@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'dart:math';
 
 class Home_page extends StatefulWidget {
   const Home_page({super.key});
@@ -11,8 +12,11 @@ class Home_page extends StatefulWidget {
 }
 
 class _Home_pageState extends State<Home_page> {
+  
   @override
+  
   Widget build(BuildContext context) {
+    int _ballnumber = Random().nextInt(5) + 1;
     return Scaffold(
       appBar: AppBar(
         title: "Ask Me Anything".text.make(),
@@ -27,10 +31,11 @@ class _Home_pageState extends State<Home_page> {
             ),
             TextButton(
                 onPressed: (() {
-                  return print("i got clicked");
+                  // _ballnumber = Random().nextInt(5) + 1;
+                  setState(() {});
                 }),
                 child: Image.asset(
-                  "images/ball1.png",
+                  "images/ball${_ballnumber}.png",
                   alignment: Alignment.center,
                   fit: BoxFit.contain,
                 )),
